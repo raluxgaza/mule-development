@@ -1,0 +1,20 @@
+<div class="essay-container">
+  <header>
+    <h1 class="essay">Essays</h1>
+    <p>By <%= link_to 'Raphael G. Shekwolo', root_path %></p>
+  </header>
+
+  <%= link_to "New post", new_post_path %>
+  <br />
+  <br />
+
+  <article>
+    <ul>
+    <% if @posts %>
+      <% @posts.each do |post| %>
+        <li><%= link_to post.title, post_path(post) %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  </article>
+</div>
